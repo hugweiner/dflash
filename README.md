@@ -17,7 +17,7 @@ https://github.com/user-attachments/assets/5b29cabb-eb95-44c9-8ffe-367c0758de8c
 ### ✅ Supported
 - **Qwen3.5-4B**: https://huggingface.co/z-lab/Qwen3.5-4B-DFlash
 - **Qwen3.5-9B**: https://huggingface.co/z-lab/Qwen3.5-9B-DFlash
-- **Qwen3.5-27B** (preview): https://huggingface.co/z-lab/Qwen3.5-27B-DFlash
+- **Qwen3.5-27B**: https://huggingface.co/z-lab/Qwen3.5-27B-DFlash
 - **Qwen3.5-35B-A3B**: https://huggingface.co/z-lab/Qwen3.5-35B-A3B-DFlash
 - **Qwen3-Coder-Next**: https://huggingface.co/z-lab/Qwen3-Coder-Next-DFlash
 - **gpt-oss-20b**: https://huggingface.co/z-lab/gpt-oss-20b-DFlash
