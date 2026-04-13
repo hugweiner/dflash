@@ -16,6 +16,7 @@ dependencies = [
     "datasets",
     "requests",
     "ipython",  # personal: useful for interactive debugging sessions
+    "matplotlib",  # personal: for plotting benchmark results
 ]
 
 [tool.setuptools.packages.find]
