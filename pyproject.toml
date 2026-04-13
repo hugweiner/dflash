@@ -17,6 +17,7 @@ dependencies = [
     "requests",
     "ipython",  # personal: useful for interactive debugging sessions
     "matplotlib",  # personal: for plotting benchmark results
+    "jupyterlab",  # personal: for running experiments in notebooks
 ]
 
 [tool.setuptools.packages.find]
