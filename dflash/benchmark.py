@@ -87,6 +87,7 @@ def _dflash_generate(
         past_key_values=past_key_values_target,
         use_cache=True,
         logits_to_keep=1,
+        # NOTE: hidden states are only needed when block_size > 1 for draft model context
         output_hidden_states=True if block_size > 1 else False,
     )
     output_ids[:, :num_input_tokens] = input_ids
@@ -98,5 +99,4 @@ def _dflash_generate(
     decode_start = _cuda_time()
     start = input_ids.shape[1]
     acceptance_lengths = []
-    # NOTE: draft_prefill must be initialized before the decode loop; set to None as sentinel
-    draft_prefill = None
+    # NOTE: draft_p
