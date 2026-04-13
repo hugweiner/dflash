@@ -15,6 +15,7 @@ dependencies = [
     "tqdm",
     "datasets",
     "requests",
+    "ipython",  # personal: useful for interactive debugging sessions
 ]
 
 [tool.setuptools.packages.find]
