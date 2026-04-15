@@ -94,9 +94,7 @@ def _dflash_generate(
     output_ids[:, num_input_tokens:num_input_tokens+1] = sample(output.logits, temperature)
     if block_size > 1:
         target_hidden = extract_context_feature(output.hidden_states, model.target_layer_ids)
+    # Record time-to-first-token (TTFT) — useful for latency profiling in benchmarks
     time_to_first_token = _cuda_time() - prefill_start
 
-    decode_start = _cuda_time()
-    start = input_ids.shape[1]
-    acceptance_lengths = []
-    # NOTE: draft_p
+    decode_start = _
