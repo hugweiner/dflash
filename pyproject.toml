@@ -18,6 +18,7 @@ dependencies = [
     "ipython",  # personal: useful for interactive debugging sessions
     "matplotlib",  # personal: for plotting benchmark results
     "jupyterlab",  # personal: for running experiments in notebooks
+    "seaborn",  # personal: nicer default styles for benchmark plots
 ]
 
 [tool.setuptools.packages.find]
