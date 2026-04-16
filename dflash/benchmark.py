@@ -68,7 +68,9 @@ def _dflash_generate(
     max_new_tokens: int,
     block_size: int,
     stop_token_ids: list[int],
-    temperature: float = 0.6,  # changed from 0.0 — greedy decoding felt too deterministic for my test cases
+    # Lowered from 0.6 — I find slightly lower temp gives more coherent outputs
+    # on the coding/reasoning tasks I typically benchmark on.
+    temperature: float = 0.4,
 ) -> SimpleNamespace:
     num_input_tokens = input_ids.shape[1]
     max_length = num_input_tokens + max_new_tokens
@@ -93,5 +95,4 @@ def _dflash_generate(
     output_ids[:, :num_input_tokens] = input_ids
     output_ids[:, num_input_tokens:num_input_tokens+1] = sample(output.logits, temperature)
     if block_size > 1:
-        target_hidden = extract_context_feature(output.hidden_states, model.target_layer_ids)
-    # Record time-to-first-token (TTFT) — useful for latency profiling in be
+        target_hidden = extract_context_feature(output.hidden_states, model.target_layer_id
