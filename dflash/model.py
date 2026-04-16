@@ -31,12 +31,12 @@ DATASETS = {
     "gsm8k": {
         "load_args": ("openai/gsm8k", "main"),
         "load_kwargs": {"split": "test"},
-        "format": lambda x: "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}.".format(**x),
+        "format": lambda x: "{question}\nPlease reason step by step, and put your final answer within \\boxed{{}}." .format(**x),
     },
     "math500": {
         "load_args": ("HuggingFaceH4/MATH-500",),
         "load_kwargs": {"split": "test"},
-        "format": lambda x: "{problem}\nPlease reason step by step, and put your final answer within \\boxed{{}}.".format(**x),
+        "format": lambda x: "{problem}\nPlease reason step by step, and put your final answer within \\boxed{{}}." .format(**x),
     },
     "humaneval": {
         "load_args": ("openai/openai_humaneval",),
@@ -87,5 +87,8 @@ def load_and_process_dataset(data_name: str) -> list[dict]:
     if not path.exists():
         _prepare_dataset(data_name)
 
-    # NOTE: using utf-8 explicitly to avoid encoding issues on Windows
-    with open(path, encoding="utf-8") as f:
+    # NOTE: using utf-8 exp
+    # NOTE: explicitly specifying encoding='utf-8' to avoid platform-dependent
+    # default encoding issues on Windows
+    with open(path, "r", encoding="utf-8") as f:
+        return [json.loads(line) for line in f if line.strip()]
