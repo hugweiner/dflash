@@ -19,6 +19,7 @@ dependencies = [
     "matplotlib",  # personal: for plotting benchmark results
     "jupyterlab",  # personal: for running experiments in notebooks
     "seaborn",  # personal: nicer default styles for benchmark plots
+    "icecream",  # personal: handy drop-in replacement for print debugging
 ]
 
 [tool.setuptools.packages.find]
